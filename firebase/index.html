@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Firebase</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="row y-center split">
+    <h3>Logo</h3>
+
+    <nav class="row">
+      <span id="user-name"></span>
+      <span id="log-btn">Login</span>
+      <span id="log-out">Log Out</span>
+    </nav>
+  </header>
+  
+  <form class="column" id="login-form">
+    <p id="error"></p>
+    <h3 id="log-header">Log In</h3>
+
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <input type="password" id="confirm" placeholder="Confirm Password">
+
+    <div class="toggle-controls row split">
+      <div class="row y-center toggle-wrap log">
+        <span>Login</span>
+        <div class="toggle-bar">
+          <button class="switch" id="log-toggle"></button>
+        </div>
+        <span>Register</span>
+      </div>
+      <div class="row y-center toggle-wrap">
+        <span>Email</span>
+        <div class="toggle-bar">
+          <button class="switch" id="auth-toggle"></button>
+        </div>
+        <span>Google</span>
+      </div>
+    </div>
+
+    <button class="submit-btn" id="log-submit">Submit</button>
+  </form>
+
+  <div class="dashboard">
+    <h1>Dashboard</h1>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBUYYwMBs3g6SWFyQ5pKjx-ANBUUY3gSc4",
+      authDomain: "fir-example-1e3f1.firebaseapp.com",
+      databaseURL: "https://fir-example-1e3f1.firebaseio.com",
+      projectId: "fir-example-1e3f1",
+      storageBucket: "fir-example-1e3f1.appspot.com",
+      messagingSenderId: "1027329044387"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
