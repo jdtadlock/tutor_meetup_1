@@ -9,6 +9,7 @@ passport.use(new LocalStrategy({
     .then(user => {
       if ( !user ) return done(null, false);
 
+      // if ( password == user.password )
       user.comparePassword(password, (err, isMatch) => {
         if ( isMatch )
           return done(null, user);
@@ -18,6 +19,10 @@ passport.use(new LocalStrategy({
 }));
 
 passport.serializeUser((user, cb) => {
+  cb(null, user.id);
+});
+
+passport.deserializeUser((id, cb) => {
   User.findById(id, (err, user) => {
     if ( err ) return cb(err);
 
